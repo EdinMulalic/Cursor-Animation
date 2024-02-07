@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacija Kursora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+
+<div class="cursor"></div>
+
+<section class="main">
+
+
+
+
+
+
+</section>
+
+
+<script type="text/javascript">
+
+const cursor=document.querySelector(".cursor");
+var timeout;
+//kretanje kursora
+document.addEventListener("mousemove",(e)=>{
+let x=e.pageX;
+let y=e.pageY;
+cursor.style.top=y+'px';
+cursor.style.left=x+'px';
+cursor.style.display='block';
+
+//kraj animacije
+function mouseStopped () {
+    cursor.style.display='none';
+
+    
+}
+
+//skrivanje animacije
+
+clearTimeout(timeout);
+timeout=setTimeout(mouseStopped,1000);
+
+
+
+});
+
+document.addEventListener("mouseout",()=>{
+    cursor.style.display='none';
+});
+
+
+</script>
+
+
+
+
+</body>
+</html>
